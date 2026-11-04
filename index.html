@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Goose Needle: DC Initiative 86</title>
+<meta name="description" content="Will D.C. ban foie gras? Our estimate, force-fed to you live.">
+<meta property="og:title" content="The Goose Needle: Will D.C. Ban Foie Gras?">
+<meta property="og:description" content="Our estimate, force-fed to you live.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://stanveuger.github.io/goose-needle/">
+<meta property="og:image" content="https://stanveuger.github.io/goose-needle/card.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Goose Needle: Will D.C. Ban Foie Gras?">
+<meta name="twitter:description" content="Our estimate, force-fed to you live.">
+<meta name="twitter:image" content="https://stanveuger.github.io/goose-needle/card.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;800&family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet">
+<style>
+  :root { --yes:#2f7d4f; --no:#b98522; --ink:#121212; --mute:#666; --rule:#dcdcdc; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:#fff; color:var(--ink); font-family:'Libre Franklin',Helvetica,Arial,sans-serif; }
+  main { max-width:680px; margin:0 auto; padding:28px 16px 40px; }
+  .kicker { font-size:12px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:var(--mute); }
+  h1 { font-family:'Libre Baskerville',Georgia,serif; font-size:clamp(24px,5vw,34px); line-height:1.15; margin:6px 0 8px; }
+  .dek { font-size:15px; color:#333; line-height:1.45; margin:0 0 14px; }
+  .rule { border-top:1px solid var(--rule); margin:12px 0; }
+  .live { display:inline-flex; align-items:center; gap:6px; font-size:12px; font-weight:600; color:#c00; text-transform:uppercase; letter-spacing:.06em; }
+  .live i { width:8px; height:8px; border-radius:50%; background:#c00; animation:pulse 1.4s infinite; }
+  @keyframes pulse { 50% { opacity:.25; } }
+  svg { width:100%; height:auto; display:block; }
+  .readout { display:grid; grid-template-columns:1fr auto 1fr; align-items:end; gap:8px; margin-top:4px; }
+  .side { font-size:13px; color:var(--mute); }
+  .side b { display:block; font-size:clamp(30px,8vw,44px); font-weight:800; line-height:1; }
+  .side.no b { color:var(--no); } .side.yes { text-align:right; } .side.yes b { color:var(--yes); }
+  .margin { text-align:center; font-size:13px; color:var(--mute); }
+  .margin b { display:block; font-size:20px; color:var(--ink); }
+  .count { margin-top:18px; padding:14px; background:#f6f5f1; border-radius:6px; font-size:14px; line-height:1.5; }
+  .count b { font-weight:800; }
+  .count small { display:block; font-size:12px; color:var(--mute); margin-top:4px; }
+  .btns { display:flex; gap:8px; margin-top:12px; flex-wrap:wrap; }
+  button { font:600 13px 'Libre Franklin',sans-serif; border:1px solid #999; background:#fff; border-radius:3px; padding:7px 12px; cursor:pointer; }
+  button[aria-pressed=true] { background:var(--ink); color:#fff; border-color:var(--ink); }
+  .note { font-size:12px; color:var(--mute); line-height:1.5; margin-top:16px; }
+  .note a { color:inherit; }
+</style>
+</head>
+<body>
+<main>
+  <div class="kicker">D.C. General Election · Initiative Measure No. 86</div>
+  <h1>Will D.C. Ban Foie Gras? Our Estimate, Force-Fed to You Live</h1>
+  <p class="dek">The Prohibiting the Force-Feeding of Birds Act would bar force-feeding birds in the District and ban sales of products like foie gras. The needle below shows our extremely uncertain estimate of how it will go.</p>
+  <span class="live"><i></i>Live (sort of)</span>
+  <div class="rule"></div>
+
+  <svg id="g" viewBox="0 0 600 415" role="img" aria-label="Animated gauge whose needle is a feeding tube sliding in and out of a goose">
+    <g id="bands"></g>
+    <g id="labels" font-family="Libre Franklin, sans-serif" font-size="12.5" font-weight="800" letter-spacing=".5"></g>
+    <text x="22" y="342" font-size="22" font-weight="800" fill="#b98522" font-family="Libre Franklin">NO</text>
+    <text x="22" y="360" font-size="12" fill="#666" font-family="Libre Franklin">keep the foie gras</text>
+    <text x="578" y="342" font-size="22" font-weight="800" fill="#2f7d4f" text-anchor="end" font-family="Libre Franklin">YES</text>
+    <text x="578" y="360" font-size="12" fill="#666" text-anchor="end" font-family="Libre Franklin">ban it</text>
+
+    <!-- rotating goose neck + tube -->
+    <g id="needle">
+      <!-- feeding tube (drawn first so the head covers its lower end) -->
+      <g id="tube">
+        <rect x="295" y="60" width="10" height="150" rx="3" fill="#d7dde2" stroke="#121212" stroke-width="2"/>
+        <rect x="297.5" y="64" width="3" height="140" fill="#fff" opacity=".8"/>
+        <path d="M282 30 L318 30 L306 62 L294 62 Z" fill="#9aa5ae" stroke="#121212" stroke-width="2" stroke-linejoin="round"/>
+        <circle cx="293" cy="27" r="4" fill="#f2c73a" stroke="#8a6a12" stroke-width="1"/>
+        <circle cx="301" cy="25" r="4" fill="#f2c73a" stroke="#8a6a12" stroke-width="1"/>
+        <circle cx="309" cy="27" r="4" fill="#f2c73a" stroke="#8a6a12" stroke-width="1"/>
+        <circle cx="297" cy="20" r="4" fill="#f2c73a" stroke="#8a6a12" stroke-width="1"/>
+        <circle cx="305" cy="20" r="4" fill="#f2c73a" stroke="#8a6a12" stroke-width="1"/>
+      </g>
+      <!-- neck outline, lump outline, neck fill, lump fill -->
+      <path id="neckO" d="M300 318 C 288 280, 312 250, 300 215" fill="none" stroke="#121212" stroke-width="27" stroke-linecap="round"/>
+      <ellipse id="lumpO" cx="300" cy="230" rx="19" ry="15" fill="#121212" opacity="0"/>
+      <path d="M300 318 C 288 280, 312 250, 300 215" fill="none" stroke="#fff" stroke-width="22" stroke-linecap="round"/>
+      <ellipse id="lump" cx="300" cy="230" rx="16.5" ry="12.5" fill="#fff" opacity="0"/>
+      <!-- head -->
+      <ellipse cx="300" cy="205" rx="20" ry="23" fill="#fff" stroke="#121212" stroke-width="2.5"/>
+      <!-- open beak around the tube -->
+      <path d="M288 190 L294 168 L299 188 Z" fill="#f08a24" stroke="#121212" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M312 190 L306 168 L301 188 Z" fill="#f08a24" stroke="#121212" stroke-width="2" stroke-linejoin="round"/>
+      <ellipse cx="300" cy="190" rx="12" ry="5" fill="#f08a24" stroke="#121212" stroke-width="2"/>
+      <!-- worried eyes -->
+      <circle cx="290" cy="205" r="3.2" fill="#121212"/>
+      <circle cx="310" cy="205" r="3.2" fill="#121212"/>
+      <path d="M284 196 L294 199 M316 196 L306 199" stroke="#121212" stroke-width="2" stroke-linecap="round"/>
+      <circle id="sweat" cx="320" cy="215" r="3" fill="#7cc3f0" opacity="0"/>
+    </g>
+
+    <!-- stationary body at the pivot; it fattens as "No" gains -->
+    <g id="body">
+      <path d="M282 392 l-8 12 h16 z M318 392 l-8 12 h16 z" fill="#f08a24" stroke="#121212" stroke-width="2" stroke-linejoin="round"/>
+      <ellipse id="belly" cx="300" cy="350" rx="70" ry="44" fill="#fff" stroke="#121212" stroke-width="2.5"/>
+      <path id="wing" d="M262 338 C 290 322, 330 330, 344 356 C 318 366, 282 362, 262 338 Z" fill="#f1f1ee" stroke="#121212" stroke-width="2"/>
+      <text id="liverTag" x="300" y="384" text-anchor="middle" font-size="10" font-weight="600" fill="#666" font-family="Libre Franklin">liver: normal</text>
+    </g>
+  </svg>
+
+  <div class="readout">
+    <div class="side no">Chance it fails<b id="pNo">42%</b></div>
+    <div class="margin">Counted lead<b id="mg">No votes yet</b></div>
+    <div class="side yes">Chance it passes<b id="pYes">58%</b></div>
+  </div>
+
+  <div class="count">
+    <div id="tally">No votes counted yet. The needle is running on pure Twitter vibes.</div>
+    <small id="stamp"></small>
+    <div class="btns">
+      <button id="calm" aria-pressed="false">Calm the needle</button>
+      <button id="feed">Feed now</button>
+    </div>
+  </div>
+
+  <p class="note">Parody graphic, not a forecast. Vote counts come from the <a href="https://electionresults.dcboe.org/">D.C. Board of Elections</a> and are unofficial until certified. The odds are not: they blend those counts with a hand-set reading of Twitter vibes, and the jitter is decorative.</p>
+</main>
+
+<script>
+(() => {
+  const CX = 300, CY = 318;
+  const ang = p => (p - 50) / 50 * 90;               // degrees from vertical
+  const pt = (p, r) => { const a = ang(p) * Math.PI / 180; return [CX + r * Math.sin(a), CY - r * Math.cos(a)]; };
+  const NS = 'http://www.w3.org/2000/svg';
+  const el = (tag, attrs, parent) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); parent && parent.appendChild(e); return e; };
+
+  // bands: very likely / likely / lean / tossup / lean / likely / very likely
+  const bands = [
+    [0, 15, '#a8741a', 'VERY LIKELY', '#8a5f12'],
+    [15, 30, '#d4a956', 'LIKELY', '#8a5f12'],
+    [30, 45, '#ecd6a6', 'LEAN', '#8a5f12'],
+    [45, 55, '#ececec', 'TOSSUP', '#555'],
+    [55, 70, '#b9dcc3', 'LEAN', '#246b40'],
+    [70, 85, '#6fb185', 'LIKELY', '#246b40'],
+    [85, 100, '#2f7d4f', 'VERY LIKELY', '#246b40']
+  ];
+  const r0 = 150, r1 = 250;
+  const B = document.getElementById('bands'), L = document.getElementById('labels');
+  bands.forEach(([a, b, fill, label, ink]) => {
+    const [x0, y0] = pt(a, r1), [x1, y1] = pt(b, r1), [x2, y2] = pt(b, r0), [x3, y3] = pt(a, r0);
+    el('path', { d: `M${x0} ${y0} A${r1} ${r1} 0 0 1 ${x1} ${y1} L${x2} ${y2} A${r0} ${r0} 0 0 0 ${x3} ${y3} Z`, fill, stroke: '#fff', 'stroke-width': 2 }, B);
+    const m = (a + b) / 2, [lx, ly] = pt(m, 263);
+    const t = el('text', { x: lx, y: ly, fill: ink, 'text-anchor': 'middle', transform: `rotate(${ang(m)} ${lx} ${ly})` }, L);
+    t.textContent = label;
+  });
+  [0, 25, 50, 75, 100].forEach(p => {
+    const [ax, ay] = pt(p, r0 - 2), [bx, by] = pt(p, r0 - 10);
+    el('line', { x1: ax, y1: ay, x2: bx, y2: by, stroke: '#999', 'stroke-width': 1.5 }, B);
+  });
+
+  const $ = id => document.getElementById(id);
+  const needle = $('needle'), tube = $('tube'), lump = $('lump'), lumpO = $('lumpO'), sweat = $('sweat');
+  const belly = $('belly'), wing = $('wing'), liverTag = $('liverTag');
+  const calmBtn = $('calm');
+
+  let target = 58, shown = target, noise = 0, nextJump = 0, calm = false;
+  let counted = 0;                                    // share of the expected vote already in, 0-1
+  let lastPlunge = 0, gulps = [], forceFeed = 0;
+  const gauss = () => { let u = 0, v = 0; while (!u) u = Math.random(); while (!v) v = Math.random(); return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v); };
+
+  calmBtn.addEventListener('click', () => { calm = !calm; nextJump = 0; calmBtn.setAttribute('aria-pressed', calm); calmBtn.textContent = calm ? 'Un-calm the needle' : 'Calm the needle'; });
+  $('feed').addEventListener('click', () => { forceFeed = performance.now(); });
+
+  // normal CDF and its inverse, for turning vibes and counts into odds
+  const phi = z => { const t = 1 / (1 + 0.2316419 * Math.abs(z)), d = 0.3989423 * Math.exp(-z * z / 2);
+    const p = d * t * (0.3193815 + t * (-0.3565638 + t * (1.781478 + t * (-1.821256 + t * 1.330274))));
+    return z > 0 ? 1 - p : p; };
+  const probit = p => { let lo = -6, hi = 6; for (let i = 0; i < 50; i++) { const m = (lo + hi) / 2; phi(m) < p ? lo = m : hi = m; } return (lo + hi) / 2; };
+
+  // vibes set the prior; counted votes take over as they come in
+  function odds(d) {
+    const vibes = d.vibes ?? 58, prior = 50 + 10 * probit(vibes / 100);
+    const total = (d.yes || 0) + (d.no || 0);
+    if (!total) return { chance: vibes, f: 0 };
+    const yes = 100 * d.yes / total;
+    const fPrecinct = d.precincts_total ? d.precincts_counted / d.precincts_total : 0;
+    const f = /certified/i.test(d.results_type || '') ? 1 : Math.min(0.98, Math.max(fPrecinct, total / (d.expected_votes || 200000)));
+    const mean = f * yes + (1 - f) * (0.7 * yes + 0.3 * prior);
+    const sd = Math.max((1 - f) * 8, 0.05);
+    return { chance: 100 * phi((mean - 50) / sd), f };
+  }
+
+  const num = n => n.toLocaleString('en-US');
+  function render(d) {
+    const { chance, f } = odds(d);
+    target = Math.max(1, Math.min(99, chance));
+    counted = f;
+    const total = (d.yes || 0) + (d.no || 0);
+    if (total) {
+      const y = 100 * d.yes / total, lead = 2 * y - 100;
+      $('mg').textContent = Math.abs(lead) < 0.05 ? 'Even' : `${lead > 0 ? 'Yes' : 'No'} +${Math.abs(lead).toFixed(1)}`;
+      $('tally').innerHTML = `<b>Yes ${num(d.yes)}</b> (${y.toFixed(1)}%) · <b>No ${num(d.no)}</b> (${(100 - y).toFixed(1)}%)`;
+      const when = d.dcboe_updated ? ` · D.C. Board of Elections, ${new Date(d.dcboe_updated).toLocaleTimeString('en-US', { timeZone: 'America/New_York', hour: 'numeric', minute: '2-digit' })} ET` : '';
+      $('stamp').textContent = `${d.precincts_counted ?? 0} of ${d.precincts_total ?? 144} precincts${when}`;
+    }
+  }
+
+  async function load() {
+    try {
+      const r = await fetch(`results.json?t=${Date.now()}`, { cache: 'no-store' });
+      if (r.ok) render(await r.json());
+    } catch (e) { /* keep the last good numbers on screen */ }
+  }
+  load();
+  setInterval(load, 30000);
+
+  // neck path sampler for the gulp lump (same cubic as the neck)
+  const neck = t => {
+    const P = [[300, 215], [312, 250], [288, 280], [300, 318]];
+    const u = 1 - t;
+    return [0, 1].map(i => u*u*u*P[0][i] + 3*u*u*t*P[1][i] + 3*u*t*t*P[2][i] + t*t*t*P[3][i]);
+  };
+
+  function frame(now) {
+    // jitter like a nervous election needle; it settles as the count fills in
+    if (now > nextJump) {
+      noise = calm ? 0 : gauss() * (4 + 6 * (1 - Math.abs(target - 50) / 50)) * (0.1 + 0.9 * (1 - counted));
+      nextJump = now + (calm ? 1e9 : 180 + Math.random() * 520);
+    }
+    shown += (Math.max(1, Math.min(99, target + noise)) - shown) * 0.14;
+    needle.setAttribute('transform', `rotate(${ang(shown).toFixed(2)} ${CX} ${CY})`);
+
+    // tube plunging in and out of the goose
+    const period = calm ? 2600 : 1400;
+    const phase = (now % period) / period;
+    let depth = 26 * Math.pow(Math.max(0, Math.sin(phase * 2 * Math.PI)), 3) + (calm ? 0 : Math.random() * 2);
+    const fed = now - forceFeed < 600;
+    if (fed) depth = 36 * Math.sin(Math.min(1, (now - forceFeed) / 600) * Math.PI);
+    tube.setAttribute('transform', `translate(0 ${depth.toFixed(1)})`);
+
+    // when the tube bottoms out, send a lump of corn down the neck
+    if (phase > 0.25 && phase < 0.3 && now - lastPlunge > period * 0.6) { lastPlunge = now; gulps.push(now); }
+    if (fed && now - forceFeed > 300 && now - lastPlunge > 250) { lastPlunge = now; gulps.push(now); }
+    gulps = gulps.filter(g => now - g < 900);
+    if (gulps.length) {
+      const t = Math.min(1, (now - gulps[gulps.length - 1]) / 900);
+      const [lx, ly] = neck(t);
+      [lump, lumpO].forEach(e => { e.setAttribute('cx', lx); e.setAttribute('cy', ly); e.setAttribute('opacity', t < 0.95 ? 1 : 0); });
+    } else { lump.setAttribute('opacity', 0); lumpO.setAttribute('opacity', 0); }
+
+    // the bird fattens as "No" (keep foie gras) gains
+    const noShare = (100 - shown) / 100;
+    const rx = 58 + 40 * noShare, ry = 38 + 16 * noShare;
+    belly.setAttribute('rx', rx.toFixed(1)); belly.setAttribute('ry', ry.toFixed(1));
+    wing.setAttribute('transform', `translate(300 350) scale(${(rx / 70).toFixed(3)} ${(ry / 44).toFixed(3)}) translate(-300 -350)`);
+    liverTag.textContent = noShare > 0.7 ? 'liver: 10× normal' : noShare > 0.55 ? 'liver: concerning' : noShare > 0.45 ? 'liver: tossup' : 'liver: normal';
+    sweat.setAttribute('opacity', depth > 18 ? 1 : 0);
+
+    const y = Math.round(shown);
+    $('pYes').textContent = `${y}%`;
+    $('pNo').textContent = `${100 - y}%`;
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
