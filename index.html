@@ -179,7 +179,7 @@
     const fPrecinct = d.precincts_total ? d.precincts_counted / d.precincts_total : 0;
     const f = /certified/i.test(d.results_type || '') ? 1 : Math.min(0.98, Math.max(fPrecinct, total / (d.expected_votes || 200000)));
     const mean = f * yes + (1 - f) * (0.7 * yes + 0.3 * prior);
-    const sd = Math.max((1 - f) * 8, 0.05);
+    const sd = Math.max((1 - f) * 8, f === 1 ? 0.05 : 0.5);   // mail ballots keep trickling in until certification
     return { chance: 100 * phi((mean - 50) / sd), f };
   }
 
