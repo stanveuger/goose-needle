@@ -1,5 +1,12 @@
 {
- "status": "waiting",
+ "status": "live",
  "vibes": 35,
- "expected_votes": 180000
+ "expected_votes": 180000,
+ "contest": "INITIATIVE MEASURE NO. 86",
+ "yes": 97432,
+ "no": 36036,
+ "precincts_counted": 144,
+ "precincts_total": 144,
+ "results_type": "Election Night Unofficial Results",
+ "dcboe_updated": "2026-11-04T02:30:16.197Z"
 }
